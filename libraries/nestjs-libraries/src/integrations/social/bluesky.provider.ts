@@ -332,6 +332,12 @@ export class BlueskyProvider extends SocialAbstract implements SocialProvider {
       facets: rt.facets,
       createdAt: new Date().toISOString(),
       ...(Object.keys(embed).length > 0 ? { embed } : {}),
+      labels: {
+        $type: 'com.atproto.label.defs#selfLabels',
+        values: [
+          { val: 'nudity' }
+        ]
+      }
     });
 
     return [
